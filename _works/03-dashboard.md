@@ -12,4 +12,4 @@ example: true
 **Що видно.** Що з цього побачив читач.
 SUPERSTORE Dashboard
 
-(https://public.tableau.com/views/Week6HWBohdan/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+  <iframe src="https://public.tableau.com/views/WeekHW/Dashboard1?:showVizHome=no&:embed=true" width="800" height="600" frameborder="0">
