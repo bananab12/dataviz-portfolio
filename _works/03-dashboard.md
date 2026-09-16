@@ -12,4 +12,4 @@ example: true
 **Що видно.** Що з цього побачив читач.
 SUPERSTORE Dashboard
 
-(://public.tableau.com/app/profile/bohdan.chornyy4205/viz/Week6HWBohdan/Dashboard1#1 "650")
+(https://public.tableau.com/views/Week6HWBohdan/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
