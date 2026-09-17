@@ -1,20 +1,14 @@
-# # ╔══════════════════════════════════════════════════════════════════╗
-# ║  НАЛАШТУВАННЯ САЙТУ                                              ║
-# ║  Ім'я стоїть тільки тут. Замінили — змінилося на всіх сторінках.  ║
-# ╚══════════════════════════════════════════════════════════════════╝
-
 title: "Bohdan Chornyy"
 role: "Business Controller"
-tagline: "Один набір даних — сезон англійської Прем'єр-ліги 2025/26 — і кілька питань до нього: хто робить результат, що росте по ходу сезону, з чого складається атака клубу і чи справді більше спроб означає більше результату. Роботи з курсу «Візуалізація даних» KSE, 2026."
-footer: "Зроблено на курсі «Візуалізація даних» · Kyiv School of Economics"
+tagline: "One dataset — the English Premier League season 2025/26 — and a handful of questions put to it: who creates the output, what grows across the season, what a club's attack is made of, and whether more attempts really mean more results. Coursework from the Data Visualization course, KSE, 2026."
+footer: "Made on the Data Visualization course · Kyiv School of Economics"
 
-# Додаткові сторінки. Поки список порожній, у панелі їх немає.
-# Додали сторінку — допишіть її сюди, і посилання з'являться.
+# Extra pages. While the list is empty, none appear in the sidebar.
 nav:
-  - name: "Про дані"
+  - name: "About the data"
     file: "about.html"
 
-# Нижче — службове. Правити не треба.
+# Below is plumbing. No need to edit.
 collections:
   works:
     output: false
@@ -27,5 +21,6 @@ defaults:
 
 exclude:
   - README.md
+
 
 

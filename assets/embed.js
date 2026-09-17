@@ -59,10 +59,10 @@
     var src = tableauEmbedUrl(raw);
 
     if (!src) {
-      box(el, "warn", "Не вдалося прочитати адресу Tableau",
-          "Має бути адреса вигляду " +
-          "public.tableau.com/app/profile/…/viz/Книга/Аркуш. " +
-          "Відкрийте графік на Tableau Public і скопіюйте адресу з адресного рядка.");
+      box(el, "warn", "Could not read the Tableau address",
+          "It should look like " +
+          "public.tableau.com/app/profile/…/viz/Workbook/Sheet. " +
+          "Open the chart on Tableau Public and copy the address from the address bar.");
       return;
     }
 
@@ -70,7 +70,7 @@
     frame.className = "viz-frame";
     frame.src = src;
     frame.loading = "lazy";
-    frame.title = "Графік Tableau Public";
+    frame.title = "Tableau Public chart";
     frame.setAttribute("allowfullscreen", "");
     frame.style.height = (el.getAttribute("data-height") || 620) + "px";
 
@@ -83,7 +83,7 @@
     a.href = String(raw).trim();
     a.target = "_blank";
     a.rel = "noopener";
-    a.textContent = "Відкрити на Tableau Public";
+    a.textContent = "Open on Tableau Public";
     link.appendChild(a);
 
     el.replaceChildren(frame, link);
@@ -136,7 +136,7 @@
   }
 
   function mountSpec(el) {
-    var path = el.getAttribute("data-spec") || "специфікація в тексті роботи";
+    var path = el.getAttribute("data-spec") || "specification written in the text";
 
     ensureVega()
       .then(function () { return specSource(el); })
@@ -148,23 +148,23 @@
         var msg = String((err && err.message) || err);
 
         if (/^cdn:/.test(msg)) {
-          box(el, "warn", "Бібліотека Vega-Lite не завантажилась",
-              "Перевірте інтернет і оновіть сторінку.");
+          box(el, "warn", "The Vega-Lite library did not load",
+              "Check your connection and reload the page.");
           return;
         }
         var hint;
         if (/404|fetch|load|network/i.test(msg)) {
-          hint = "Файл " + path + " не знайдено. Перевірте, що він лежить у теці " +
-                 "specs/ і що ім'я збігається. Великі й малі літери мають значення.";
+          hint = "File " + path + " was not found. Check that it sits in the " +
+                 "specs/ folder and that the name matches. Capitalisation matters.";
         } else if (/JSON|token|Unexpected/i.test(msg)) {
-          hint = "Специфікація не читається як JSON. Найчастіша причина — зайва " +
-                 "або пропущена кома. Вставте специфікацію у Vega Editor: він " +
-                 "покаже, де саме.";
+          hint = "The specification does not parse as JSON. The usual cause is an extra " +
+                 "or missing comma. Paste the specification into the Vega Editor: it " +
+                 "will point at the spot.";
         } else {
-          hint = "Vega-Lite відмовилась малювати цю специфікацію: " + msg +
-                 ". Перевірте її у Vega Editor.";
+          hint = "Vega-Lite refused to draw this specification: " + msg +
+                 ". Check it in the Vega Editor.";
         }
-        box(el, "warn", "Графік не вдалося показати", hint);
+        box(el, "warn", "The chart could not be displayed", hint);
       });
   }
 
@@ -266,9 +266,9 @@
       try {
         viz.inlineSpec = JSON.parse(code.textContent);
       } catch (e) {
-        box(viz, "warn", "Специфікація в тексті не читається як JSON",
-            "Найчастіша причина — зайва або пропущена кома. Вставте її у " +
-            "Vega Editor: він покаже, де саме. Повідомлення браузера: " +
+        box(viz, "warn", "The inline specification does not parse as JSON",
+            "The usual cause is an extra or missing comma. Paste it into the " +
+            "Vega Editor: it will point at the spot. Browser message: " +
             String(e.message || e));
       }
     });
@@ -333,7 +333,7 @@
 
     function label() {
       var open = document.querySelectorAll("details.work[open]").length;
-      btn.textContent = open ? "Згорнути всі" : "Розгорнути всі";
+      btn.textContent = open ? "Collapse all" : "Expand all";
     }
 
     btn.addEventListener("click", function () {
@@ -363,7 +363,7 @@
         if (el.hasAttribute("data-tableau")) mountTableau(el);
         else if (el.inlineSpec || el.hasAttribute("data-spec")) mountSpec(el);
       } catch (e) {
-        box(el, "warn", "Цей блок не вдалося показати", String(e.message || e));
+        box(el, "warn", "This block could not be displayed", String(e.message || e));
       }
     });
 

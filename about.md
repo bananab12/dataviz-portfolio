@@ -1,36 +1,37 @@
 ---
-heading: "Про дані та метод"
+heading: "About the data"
 ---
 
-Усі роботи на цій сторінці зроблено на одному відкритому наборі даних — статистиці
-гравців у матчах англійської Прем'єр-ліги сезону 2025/26. Це навчальні відкриті
-дані про публічні спортивні події: жодних робочих, клієнтських чи персональних
-даних тут немає.
+Every piece of work on this page is built on one open dataset: player-level match
+statistics from the English Premier League, season 2025/26. These are open,
+educational data about public sporting events — no work, client or personal data
+appears here.
 
-**Що всередині.** 11 492 рядки, кожен — один гравець в одному матчі. 380 матчів,
-38 турів, 20 клубів, 537 гравців. На рядок припадає 39 полів: хвилини, голи,
-гольові передачі, удари й удари у створ, пенальті, картки, фоли, відбори,
-перехоплення, а також атрибути матчу — дата, тур, суперник, стадіон, відвідуваність,
-арбітр.
+**What is inside.** 11,492 rows, each one player in one match. 380 matches, 38
+matchweeks, 20 clubs, 537 players. Each row carries 39 fields: minutes, goals,
+assists, shots and shots on target, penalties, cards, fouls, tackles won and
+interceptions, plus match attributes — date, matchweek, opponent, venue, attendance
+and referee.
 
-**Що довелося почистити.** Назви трьох клубів у полі команди й у полях господарів і
-гостей записані по-різному: «Brighton» проти «Brighton & Hove Albion», «Manchester
-Utd» проти «Manchester United», «Wolves» проти «Wolverhampton Wanderers». Без
-зведення назв кожен підрахунок «удома проти в гостях» втрачав би 143 голи — саме
-такий розрив я побачив на першій же перевірці сум. Поле позиції містить кілька
-позначок через кому (наприклад, «FW,AM»), тому для групування я беру першу —
-основну. Для зручності читання довгі назви клубів скорочено на графіках.
+**What had to be cleaned.** Three clubs are named differently in the team field and
+in the home/away fields: "Brighton" against "Brighton & Hove Albion", "Manchester
+Utd" against "Manchester United", "Wolves" against "Wolverhampton Wanderers".
+Without reconciling those names, every home-versus-away calculation loses 143 goals
+— that is exactly the gap the first sanity check on the totals revealed. The
+position field holds several labels separated by commas (for example "FW,AM"), so
+grouping uses the first, primary one. Long club names are shortened on the charts
+for readability.
 
-**Про що ці дані мовчать.** Тут немає ані очікуваних голів (xG), ані володіння, ані
-позицій ударів на полі, тому «реалізація» в моїх роботах — це проста частка голів
-від ударів, а не оцінка якості моментів. Автоголи (40 за сезон) обліковуються
-окремо і не приписані жодному гравцю як голи: у матчах забито 1045 м'ячів, з них
-1005 мають автора. Голи з пенальті входять у загальну кількість голів, але в
-підказках показані окремо — 77 за сезон при 92 спробах.
+**What the data stay silent about.** There are no expected goals (xG), no
+possession, no shot locations, so "conversion" in this work is simply goals divided
+by shots, not a measure of chance quality. Own goals (40 across the season) are
+recorded separately and credited to no player: 1,045 goals were scored in the
+matches, 1,005 of which have a named scorer. Penalties are included in the goal
+totals but shown separately in the tooltips — 77 scored from 92 attempts.
 
-**Чим зроблено.** Перша робота — Tableau Public. Решта — специфікації Vega-Lite,
-які лежать у теці `specs` цього репозиторію: дані в них уже агреговані, тож графіки
-малюються в браузері читача без жодного сервера. Кольори підібрані однією палітрою
-для всіх робіт і перевірені на розрізнення при дальтонізмі; порядкові шкали
-(позиції гравців) — одним синім градієнтом, категорії — фіксованим набором
-кольорів.
+**How it was built.** The first piece of work is Tableau Public. The rest are
+Vega-Lite specifications stored in the `specs` folder of this repository: the data
+inside them are pre-aggregated, so the charts render in the reader's browser with no
+server involved. Colours come from a single palette shared across all the work and
+checked for colour-blind separation; ordered scales (player positions) use one blue
+gradient, categories use a fixed set of hues.

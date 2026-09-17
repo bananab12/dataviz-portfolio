@@ -1,28 +1,30 @@
 ---
-title: "Чи пов'язані: скільки ударів коштує гол"
+title: "Are they related: what a goal costs in shots"
 ---
 
-**Питання.** «Бий частіше — заб'єш більше» звучить як очевидна істина. Наскільки
-сильний цей зв'язок насправді і хто з нього випадає в обидва боки?
+**Question.** "Shoot more and you will score more" sounds self-evident. How strong
+is that relationship really, and who falls outside it in either direction?
 
-![Удари й голи гравців із 15+ ударами за сезон](specs/pl-shots-goals.vl.json)
+![Shots and goals for players with 15+ shots in the season](specs/pl-shots-goals.vl.json)
 
-**Рішення.** Точкова діаграма — єдина форма, яка показує зв'язок двох величин і
-одночасно окремі випадки. Пунктир — не лінія регресії, а середня реалізація ліги
-(10,6 % ударів), тобто зрозумілий орієнтир: вище пунктира гравець забиває більше,
-ніж «належить» за кількістю спроб. Колір ділить точки саме за цією межею, і межа
-підписана в легенді, а не залишена на здогад. Повзунок мінімальної кількості
-ударів прибирає хвіст випадкових значень: гравець із трьома ударами й одним голом
-має «реалізацію 33 %», яка нічого не означає. Підписано лише три точки — два
-полюси і найяскравіший антиприклад; підписувати всі означало б зробити графік
-нечитомим.
+**Decision.** A scatter plot is the only form that shows the relationship between
+two quantities and the individual cases at the same time. The dashed line is not a
+regression line but the league's average conversion (10.6% of shots) — a reference
+anyone can interpret: above it, a player scores more than his attempts "entitle"
+him to. The colour splits the dots on exactly that boundary, and the boundary is
+named in the legend rather than left to be guessed. The minimum-shots slider strips
+out the tail of accidental values: a player with three shots and one goal has a
+"33% conversion" that means nothing. Only three dots are labelled — the two poles
+and the sharpest counter-example; labelling all of them would make the chart
+unreadable.
 
-**Що видно.** Зв'язок сильний, але не залізний: кореляція ударів і голів — 0,82, а
-от ударів **у створ** і голів — 0,90. Тобто рахується не активність, а влучність;
-це і є різниця між «багато рухався» і «зробив результат». Голанд (126 ударів, 27
-голів) і Тіагу (84 і 22) стоять високо над пунктиром — приблизно на 13 голів вище
-за середню норму кожен. Віктор Гьокереш забив 14 із 55 ударів — 25 %, найкраща
-реалізація серед бомбардирів. Внизу — Девід Брукс: 48 ударів і один гол. Для
-фінансиста це знайома картина: обсяг активності легко виміряти й легко переплутати
-з результатом, тому в звіті поруч із «скільки спроб» завжди має стояти «скільки
-влучань».
+**What it shows.** The link is strong but not ironclad: the correlation between
+shots and goals is 0.82, while between shots **on target** and goals it is 0.90. It
+is accuracy, not activity, that counts — the difference between "covered a lot of
+ground" and "produced a result". Haaland (126 shots, 27 goals) and Thiago (84 and
+22) sit far above the dashed line, each roughly 13 goals above the expected rate.
+Viktor Gyökeres scored 14 from 55 shots — 25%, the best conversion among the leading
+scorers. At the bottom sits David Brooks: 48 shots, one goal. For a finance person
+this is a familiar picture: activity is easy to measure and easy to mistake for
+results, which is why every report that shows "attempts" must show "hits" next to
+it.

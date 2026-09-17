@@ -1,28 +1,30 @@
 ---
-title: "З чого складається: хто насправді забиває за клуб"
+title: "What it is made of: who actually scores for a club"
 ---
 
-**Питання.** Команда забила 60 голів — це заслуга нападника чи всієї структури?
-Клуби з однаковою сумою можуть бути влаштовані зовсім по-різному, і саме склад
-голів, а не їх кількість, говорить про стійкість атаки.
+**Question.** A club scored 60 goals — is that the striker's achievement or the
+whole structure's? Clubs with identical totals can be built in completely different
+ways, and it is the composition of the goals, not their number, that says how
+resilient an attack is.
 
-![Голи клубів за позицією автора гола](specs/pl-composition.vl.json)
+![Club goals by the scorer's position](specs/pl-composition.vl.json)
 
-**Рішення.** Смуги з накопиченням у абсолютних числах, а не у відсотках: відсотки
-зрівняли б «Манчестер Сіті» з 74 голами і «Вулвз» із 26, а тут важливі обидва
-виміри одразу — скільки і від кого. Позиції згорнуто в чотири групи, бо 14
-початкових позначок дали б 14 кольорів, яких не розрізнити. Колір — одна синя
-шкала від темного до світлого, від лінії атаки до захисту: групи мають природний
-порядок, і послідовна шкала показує його сама, тоді як чотири різні кольори
-змушували б звірятися з легендою. Між сегментами білі проміжки, щоб суміжні
-відтінки не зливались.
+**Decision.** Stacked bars in absolute numbers rather than percentages: shares would
+put Manchester City on 74 goals level with Wolves on 26, whereas here both
+dimensions matter at once — how many and from whom. Positions are collapsed into
+four groups, because the 14 original labels would need 14 colours nobody can tell
+apart. The colour is a single blue ramp running dark to light, from the front line
+to the back — the groups have a natural order, and an ordered scale shows it by
+itself, while four unrelated colours would send the reader back to the legend on
+every bar. White gaps between the segments keep neighbouring shades from merging.
 
-**Що видно.** У лізі 1005 голів з відомим автором (ще 40 — автоголи, вони не
-належать жодному амплуа), і лише 414 із них (41 %) забили номінальні нападники —
-тобто більшість голів приходить не від тих, кого для цього купують. «Манчестер Сіті» — найбільш
-«нападницька» команда: 59 % голів від форвардів, і це та сама залежність від
-одного Голанда. Протилежний полюс — «Манчестер Юнайтед» (27 %) і «Челсі» (28 %),
-де голи рівномірно розкладені між атакувальними півзахисниками й лінією нижче.
-Захисники дали 124 голи на лігу — цілий сезон середнього клубу зі стандартів.
-Практичний висновок: одна цифра «забито» не описує ризик — команда з 59 % від
-одного амплуа втрачає значно більше, якщо цей гравець травмується.
+**What it shows.** The league produced 1,005 goals with a named scorer (another 40
+were own goals, which belong to no position), and only 414 of them — 41% — came from
+nominal forwards, meaning most goals arrive from players nobody buys for that
+purpose. Manchester City is the most forward-dependent side: 59% of its goals came
+from the front line, which is the same thing as depending on Haaland. The opposite
+pole is Manchester United (27%) and Chelsea (28%), where goals are spread evenly
+across attacking midfield and the lines below. Defenders contributed 124 goals
+across the league — a whole mid-table season's worth, from set pieces. The practical
+takeaway: a single "goals scored" figure says nothing about risk — a club taking 59%
+of its output from one position loses far more when that player is injured.
