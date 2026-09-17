@@ -1,5 +1,5 @@
 ---
-title: "Are they related: what a goal costs in shots?
+title: "Are they related: what a goal costs in shots?"
 ---
 
 **Question.** "Shoot more and you will score more" sounds self-evident. How strong
